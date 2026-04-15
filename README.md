@@ -16,17 +16,15 @@
 
 ```bash
 cd mini-demo
-
-# 1. 创建虚拟环境并安装依赖
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# 2. 配置 API Key（可选 — 代码内有默认 key 供本地 demo）
-export GEMINI_API_KEY="your-gemini-key"        # Module C: 智能分析
-export DASHSCOPE_API_KEY="your-dashscope-key"   # Module A: PDF 解析
-
-# 3. 启动 Streamlit
+# 2.  API Key
+export DASHSCOPE_API_KEY="your-dashscope-key"   # Module A: 
+export MODULE_B_API_KEY="key"                   #Module B:
+export GEMINI_API_KEY="your-gemini-key"        # Module C: 
+# 3. Run Streamlit
 streamlit run app.py
 ```
 
