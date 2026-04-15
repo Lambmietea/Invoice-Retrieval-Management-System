@@ -416,6 +416,22 @@ def run_task(command: str) -> TaskResult:
         }
 
 
+def get_invoice_detail(invoice_id: str) -> dict | None:
+    """Look up the full Chinese-keyed invoice dict by invoice_id.
+
+    Searches both disk data and session-uploaded invoices so that the UI
+    can display 项目明细 (line items) and other detailed fields for any
+    invoice returned by search.
+    """
+    if not invoice_id:
+        return None
+    all_cn = list(_load_disk_cn()) + list(_SESSION_CN)
+    for inv in all_cn:
+        if str(inv.get("发票号码", "")).strip() == str(invoice_id).strip():
+            return inv
+    return None
+
+
 __all__ = [
     "InvoiceRecord",
     "IndexResult",
@@ -425,5 +441,6 @@ __all__ = [
     "index_invoice",
     "query_invoices",
     "get_all_invoices",
+    "get_invoice_detail",
     "run_task",
 ]

@@ -18,26 +18,19 @@ from __future__ import annotations
 
 import os
 
-# ---------------------------------------------------------------------------
-# Gemini (Module C — LLM intelligent analysis agent)
-# ---------------------------------------------------------------------------
+
+
 GEMINI_API_KEY: str = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL: str = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
-# ---------------------------------------------------------------------------
-# Module B — Query Parser LLM (OpenAI-compatible API)
-# ---------------------------------------------------------------------------
-# Set these to use your own model for Module B's intelligent query parsing.
-# Supports any OpenAI-compatible endpoint (e.g. 通义千问, DeepSeek, 智谱, vLLM, etc.)
+
 MODULE_B_API_KEY: str = os.environ.get("MODULE_B_API_KEY", "")
 MODULE_B_API_BASE: str = os.environ.get(
     "MODULE_B_API_BASE", "https://open.bigmodel.cn/api/paas/v4"
 )
 MODULE_B_MODEL: str = os.environ.get("MODULE_B_MODEL", "glm-4.5-air")
 
-# ---------------------------------------------------------------------------
-# DashScope / Qwen-VL (Module A — PDF invoice parsing)
-# ---------------------------------------------------------------------------
+
 DASHSCOPE_API_KEY: str = os.environ.get("DASHSCOPE_API_KEY", "")
 DASHSCOPE_MODEL: str = os.environ.get(
     "DASHSCOPE_MODEL", "qwen-vl-max-2025-04-02"
